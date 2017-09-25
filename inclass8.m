@@ -22,8 +22,8 @@ disp(start);
 
 % the default GapOpen value is 8
 
-[score_lowgap, align_lowgap, start_lowgap] = swalign(seq1, seq2, 'GapOpen', 1, 'Showscore', true);
-[score_highgap, align_highgap, start_highgap] = swalign(seq1, seq2, 'GapOpen', 20, 'Showscore', true);
+[score_lowgap, align_lowgap, start_lowgap] = swalign(seq1, seq2,'Alphabet','nt', 'GapOpen', 1, 'Showscore', true);
+[score_highgap, align_highgap, start_highgap] = swalign(seq1, seq2, 'Alphabet','nt','GapOpen', 20, 'Showscore', true);
 
 disp(score_lowgap);
 disp(align_lowgap);
@@ -44,7 +44,7 @@ disp(start_highgap);
 % E. run swalign with a low value of GapOpen but a high value of ExtendGap,
 % explain the result
 
-[score_lowgap_highext, align_lowgap_highext, start_lowgap_highext] = swalign(seq1, seq2, 'GapOpen', 1, 'ExtendGap', 20, 'Showscore', true);
+[score_lowgap_highext, align_lowgap_highext, start_lowgap_highext] = swalign(seq1, seq2, 'Alphabet','nt','GapOpen', 1, 'ExtendGap', 20, 'Showscore', true);
 disp(score_lowgap_highext);
 disp(align_lowgap_highext);
 disp(start_lowgap_highext);
@@ -55,7 +55,7 @@ disp(start_lowgap_highext);
 % of ExtendGap and explain the result. 
 
 
-[score_defaultgap_lowext, align_defaultgap_lowext, start_defaultgap_lowext] = swalign(seq1, seq2, 'GapOpen', 8, 'ExtendGap', 1, 'Showscore', true);
+[score_defaultgap_lowext, align_defaultgap_lowext, start_defaultgap_lowext] = swalign(seq1, seq2, 'Alphabet','nt', 'GapOpen', 8, 'ExtendGap', 1, 'Showscore', true);
 disp(score_defaultgap_lowext);
 disp(align_defaultgap_lowext);
 disp(start_defaultgap_lowext);
