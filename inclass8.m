@@ -8,7 +8,8 @@ seq1 = randdnaseq(100);
 
 % B. Create a second sequence from the first one by changing the middle 20 basepairs (at positions 41-60)
 
-seq2 = [randseq(40), seq1(41:60), randseq(40)];
+seq2 = [seq1(1:40), randseq(20), seq1(61:100)];
+
 
 % C. run swalign on the two sequences with the default parameters
 
@@ -34,8 +35,10 @@ disp(align_highgap);
 disp(start_highgap);
 
 % Lower gap penalties will favor the insertions of gaps in the sequence
-% alignment, higher gap penalties will favor mismatches instead of the
-% insertion of gaps. Both behavior are explained by the smith-waterman
+% alignment. 
+% Higher gap penalties will favor mismatches instead of the
+% insertion of gaps. 
+% Both behaviors are explained by the smith-waterman
 % algorithm which will favor the smaller value obtained after testing for
 % the score between the matches or the insertion of gaps in either seq1 or
 % seq2.
