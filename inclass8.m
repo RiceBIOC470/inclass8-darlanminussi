@@ -1,3 +1,5 @@
+%AW. Looks good. 1/1. See comments below.
+
 %Inclass assignment 8
 %Darlan Conterno Minussi
 
@@ -13,6 +15,8 @@ seq2 = [seq1(1:40), randseq(20), seq1(61:100)];
 
 % C. run swalign on the two sequences with the default parameters
 
+%AW - Note: this will use the amino acid rather than nucleotide parameters. Question did say default, but
+% it doesn't really make sense to do this. 
 [score, align, start] = swalign(seq1, seq2); 
 disp(score);
 disp(align);
@@ -63,6 +67,8 @@ disp(score_defaultgap_lowext);
 disp(align_defaultgap_lowext);
 disp(start_defaultgap_lowext);
 
+%AW: This is OK - a simpler way to say it is that low GapOpen but high Extend gap will tend to open many smaller gaps. 
+%The opposite will tend to  open smaller numbers of large gaps. 
 
 % explanation for E and F
 % Low gap scores will favor the opening of gaps, however the high extend
